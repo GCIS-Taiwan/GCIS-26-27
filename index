@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport tag makes the page render correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 2 Parent Communication Hub</title>
+    <style>
+        /* Modern Color Palette & Variables */
+        :root {
+            --weekly-color: #0066cc;
+            --weekly-hover: #004999;
+            --unit-color: #2e7d32;
+            --unit-hover: #1b5e20;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --subtext-color: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 25px 15px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--weekly-color);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--subtext-color);
+            font-size: 1rem;
+        }
+
+        /* Layout: Stacked on Mobile, Side-by-Side on Desktop */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .sections-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Card Section Styling */
+        .section-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .section-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eef2f5;
+        }
+
+        .weekly-card h2 { color: var(--weekly-color); }
+        .unit-card h2 { color: var(--unit-color); }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Button Styling */
+        .link-button {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            color: var(--text-color);
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Category Hover Colors */
+        .weekly-card .link-button:hover {
+            background-color: var(--weekly-color);
+            color: white;
+            border-color: var(--weekly-color);
+        }
+
+        .unit-card .link-button:hover {
+            background-color: var(--unit-color);
+            color: white;
+            border-color: var(--unit-color);
+        }
+
+        .link-title {
+            font-weight: bold;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .link-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            display: block;
+            margin-top: 3px;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            background-color: #e65100;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Information / Placeholder Note */
+        .note {
+            font-size: 0.85rem;
+            color: var(--subtext-color);
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Welcome, Grade 2 Families!</h1>
+            <p>Your hub for weekly classroom updates and upcoming unit overviews.</p>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="sections-grid">
+            
+            <!-- SECTION 1: WEEKLY NEWSLETTERS -->
+            <div class="section-card weekly-card">
+                <h2>📅 Weekly Newsletters</h2>
+                <div class="link-list">
+
+                    <!-- LATEST WEEKLY UPDATE -->
+                    <a href="weekly/week-01/index.html" class="link-button">
+                        <span class="link-title">Week 1 Update <span class="badge">NEW</span></span>
+                        <span class="link-subtitle">Sept 4 – Sept 8: Welcome to Grade 2!</span>
+                    </a>
+
+                    <!-- PLACEHOLDER FOR FUTURE WEEKS (Copy & paste as weeks go by) -->
+                    <!-- 
+                    <a href="weekly/week-02/index.html" class="link-button">
+                        <span class="link-title">Week 2 Update</span>
+                        <span class="link-subtitle">Sept 11 – Sept 15: Classroom Routines</span>
+                    </a>
+                    -->
+
+                    <p class="note">New weekly updates are posted every Friday.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: UNIT NEWSLETTERS -->
+            <div class="section-card unit-card">
+                <h2>📚 Unit Overviews</h2>
+                <div class="link-list">
+
+                    <!-- CURRENT UNIT OVERVIEW -->
+                    <a href="units/unit-1/index.html" class="link-button">
+                        <span class="link-title">Unit 1 Overview <span class="badge">CURRENT</span></span>
+                        <span class="link-subtitle">Community & Belonging | Sept – Oct</span>
+                    </a>
+
+                    <!-- UPCOMING UNIT OVERVIEW -->
+                    <!-- 
+                    <a href="units/unit-2/index.html" class="link-button">
+                        <span class="link-title">Unit 2 Overview</span>
+                        <span class="link-subtitle">Materials & Forces | Nov – Dec</span>
+                    </a>
+                    -->
+
+                    <p class="note">Unit newsletters are posted at the start of each unit.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
