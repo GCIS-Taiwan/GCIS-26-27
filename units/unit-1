@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 Overview: Junior Science Detectives - Grade 2 Hub</title>
+    <style>
+        /* =========================================================
+           COLOR PALETTE & VARIABLES
+           ========================================================= */
+        :root {
+            /* Light Theme Colors */
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+            --text-color: #2c3e50;
+            --subtext-color: #555555;
+            --border-color: #e2e8f0;
+
+            --primary-color: #2e7d32;
+            --primary-hover: #1b5e20;
+            --accent-color: #0066cc;
+
+            --button-bg: #f8fafc;
+            --tldr-bg: #f1f8e9;
+            --tldr-border: #2e7d32;
+            --shadow-color: rgba(0, 0, 0, 0.06);
+        }
+
+        /* Dark Theme Colors */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --nav-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --subtext-color: #b0b0b0;
+            --border-color: #333333;
+
+            --primary-color: #66bb6a;
+            --primary-hover: #81c784;
+            --accent-color: #4da6ff;
+
+            --button-bg: #2a2a2a;
+            --tldr-bg: #1b2e1e;
+            --tldr-border: #66bb6a;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 50px;
+        }
+
+        /* =========================================================
+           NAVIGATION BAR
+           ========================================================= */
+        .navbar {
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        .nav-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+            background-color: var(--button-bg);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--button-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        #google_translate_element select {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           MAIN CONTENT & LAYOUT
+           ========================================================= */
+        .container {
+            max-width: 850px;
+            margin: 30px auto 0;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.1rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .central-idea-box {
+            background: var(--button-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 20px 0 25px;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            margin-top: 35px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* TLDR Box */
+        .tldr-box {
+            background-color: var(--tldr-bg);
+            border-left: 4px solid var(--tldr-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .tldr-title {
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .tldr-list {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .tldr-list li {
+            margin-bottom: 6px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Table / Cards */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .roadmap-step {
+            background: var(--button-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .step-week {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--subtext-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">Grade 2 Hub</a>
+
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../about.html" class="nav-link">About Me</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <div id="google_translate_element"></div>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">Dark</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="card">
+            <a href="../../index.html" class="back-link">&larr; Return to Hub</a>
+
+            <span class="badge">Unit 1 Overview (Sept – Oct)</span>
+            <h1>Junior Science Detectives: Animal & Habitat Mystery</h1>
+
+            <div class="central-idea-box">
+                <strong>Central Idea:</strong> Humans interact with the environment which affects all the living things within the environment.
+            </div>
+
+            <!-- TLDR SUMMARY BOX -->
+            <div class="tldr-box">
+                <div class="tldr-title">TL;DR Unit Summary</div>
+                <ul class="tldr-list">
+                    <li><strong>The Narrative:</strong> Students become "Junior Scientists" unraveling an 8-week mystery cold case about unknown animals, body features, habitats, and rocks.</li>
+                    <li><strong>Pedagogical Approach:</strong> Inquiry-driven and peer-supported learning where students construct knowledge by analyzing new evidence weekly rather than through direct instruction alone.</li>
+                    <li><strong>Curriculum Integration:</strong> Combines Cambridge Stage 2 Science, English Language non-fiction skills, and Mathematics sequences and patterns.</li>
+                    <li><strong>How You Can Help:</strong> Ask your child: <em>"What new clue did your detective team inspect this week?"</em></li>
+                </ul>
+            </div>
+
+            <h2>Unit Narrative & Learning Journey</h2>
+            <p>Welcome to Unit 1! This term, our Grade 2 classroom turns into a scientific investigation laboratory. Rather than simply reading about animals from a textbook, students take on the role of <strong>Junior Science Detectives</strong> tasked with solving a cold case mystery.</p>
+            
+            <p>Each week, detective teams receive fresh evidence—such as micro-photography of skin coverings, environmental weather logs, dental jaw prints, rock samples, and shadow logs. Students collaborate with their peers, apply critical thinking, evaluate new evidence against their existing theories, and piece together the full picture of an animal and its habitat.</p>
+
+            <h2>8-Week Investigation Roadmap</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-step">
+                    <div class="step-week">Week 1</div>
+                    <div class="step-title">The Cold Case: Body Coverings & Features</div>
+                    <div class="step-desc">Inspecting skin, hair, feathers, and scales; comparing human and animal external body parts using visible thinking routines.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Week 2</div>
+                    <div class="step-title">Mapping the Habitat</div>
+                    <div class="step-desc">Analyzing climate logs (hot, cold, wet, dry) and plant density to define animal habitats.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Week 3</div>
+                    <div class="step-title">Bite Mark Analysis: Teeth & Nutrition</div>
+                    <div class="step-desc">Comparing human teeth types (incisors, molars) to animal jaws; exploring diet, hygiene, and health.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Week 4</div>
+                    <div class="step-title">Growth Files & Family Traits</div>
+                    <div class="step-desc">Investigating offspring, inherited parent traits, growth changes over time, and basic signs of health/illness.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Week 5</div>
+                    <div class="step-title">Ground Evidence: Rocks & Human Impact</div>
+                    <div class="step-desc">Testing rock properties (quarries, mines, riverbeds) and analyzing how human activity alters natural habitats.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Week 6</div>
+                    <div class="step-title">Daily Rhythms & Movement of the Sun</div>
+                    <div class="step-desc">Tracking shadow logs to understand nocturnal/diurnal habits and the apparent movement of the Sun.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-week">Weeks 7–8</div>
+                    <div class="step-title">Final Case Dossier & Action</div>
+                    <div class="step-desc">Synthesizing evidence, drafting simple non-fiction reports, revealing mystery animals, and identifying positive environmental actions.</div>
+                </div>
+            </div>
+
+            <h2>Integrated Learning Goals</h2>
+
+            <h3>Science (Cambridge Primary Stage 2)</h3>
+            <ul>
+                <li><strong>Structure & Function:</strong> Compare external body parts and skin coverings of humans and animals. Identify human teeth types, their functions, and proper care.</li>
+                <li><strong>Life Processes:</strong> Recognize health requirements (diet, hygiene, movement), common signs of illness, and how offspring change and inherit features from parents.</li>
+                <li><strong>Ecosystems:</strong> Define natural habitats and compare local environments in terms of climate, plant, and animal populations.</li>
+                <li><strong>Planet Earth & Space:</strong> Describe and compare rock types and extraction methods; identify human environmental impacts; observe the Sun's apparent movement during the day.</li>
+            </ul>
+
+            <h3>English Language Skills</h3>
+            <ul>
+                <li><strong>Reading & Comprehension:</strong> Decode unfamiliar words using phonics, identify vowel sounds, split compound words (e.g., <em>sun-light</em>), and answer key question words (who, what, where, why).</li>
+                <li><strong>Writing & Research:</strong> Use non-fiction models to plan writing, take simple keyword notes, build vocabulary collections, and write descriptive recounts and simple evaluations.</li>
+            </ul>
+
+            <h3>Mathematics</h3>
+            <ul>
+                <li><strong>Counting & Sequences:</strong> Count objects from 0 to 100, recognize patterns without counting (subitizing), identify odd and even numbers, and count in 2s, 5s, and 10s.</li>
+                <li><strong>Operations & Concepts:</strong> Practice digit addition and subtraction (complements of 20), understand multiplication as arrays/repeated addition, and understand division as equal sharing and grouping.</li>
+            </ul>
+
+            <h2>Supporting Your Junior Detective at Home</h2>
+            <ul>
+                <li><strong>Ask Open Questions:</strong> Encourage your child to explain <em>why</em> they hold a hypothesis (e.g., <em>"What evidence makes you think that animal lives in a dry desert?"</em>).</li>
+                <li><strong>Explore Nature Together:</strong> Notice different rock textures, shadow shifts during the afternoon, or local animal habitats during family outdoor walks.</li>
+                <li><strong>Read Non-Fiction Texts:</strong> Check out books from the local library about unusual animals, habitats, or geology to build scientific vocabulary together.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR TRANSLATION AND DARK MODE -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'zh-TW,zh-CN,en,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleBtn.textContent = 'Light';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = 'Dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = 'Light';
+            }
+        });
+    </script>
+</body>
+
+</html>
