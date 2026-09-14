@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Glen Pamment - Grade 2</title>
+    <title>Educational Philosophy - Glen Pamment</title>
     <style>
         /* =========================================================
            COLOR PALETTE & VARIABLES
@@ -15,13 +15,15 @@
             --card-bg: #ffffff;
             --nav-bg: #ffffff;
             --text-color: #2c3e50;
-            --subtext-color: #666666;
+            --subtext-color: #555555;
             --border-color: #e2e8f0;
 
-            --weekly-color: #0066cc;
-            --weekly-hover: #004999;
+            --primary-color: #0066cc;
+            --primary-hover: #004999;
 
             --button-bg: #f8fafc;
+            --tldr-bg: #eef6ff;
+            --tldr-border: #0066cc;
             --shadow-color: rgba(0, 0, 0, 0.06);
         }
 
@@ -31,13 +33,15 @@
             --card-bg: #1e1e1e;
             --nav-bg: #1e1e1e;
             --text-color: #e0e0e0;
-            --subtext-color: #a0a0a0;
+            --subtext-color: #b0b0b0;
             --border-color: #333333;
 
-            --weekly-color: #4da6ff;
-            --weekly-hover: #80c1ff;
+            --primary-color: #4da6ff;
+            --primary-hover: #80c1ff;
 
             --button-bg: #2a2a2a;
+            --tldr-bg: #1a2634;
+            --tldr-border: #4da6ff;
             --shadow-color: rgba(0, 0, 0, 0.4);
         }
 
@@ -53,8 +57,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
-            padding-bottom: 40px;
+            line-height: 1.7;
+            padding-bottom: 50px;
         }
 
         /* =========================================================
@@ -83,7 +87,7 @@
         .nav-brand {
             font-weight: bold;
             font-size: 1.2rem;
-            color: var(--weekly-color);
+            color: var(--primary-color);
             text-decoration: none;
         }
 
@@ -105,7 +109,7 @@
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--weekly-color);
+            color: var(--primary-color);
             background-color: var(--button-bg);
         }
 
@@ -115,7 +119,7 @@
             gap: 10px;
         }
 
-        /* Dark Mode Toggle Button */
+        /* Controls */
         .theme-toggle-btn {
             background: var(--button-bg);
             border: 1px solid var(--border-color);
@@ -125,16 +129,12 @@
             padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .theme-toggle-btn:hover {
-            border-color: var(--weekly-color);
+            border-color: var(--primary-color);
         }
 
-        /* Clean styling for Google Translate Dropdown */
         #google_translate_element select {
             background-color: var(--button-bg);
             color: var(--text-color);
@@ -146,32 +146,26 @@
         }
 
         /* =========================================================
-           MAIN CONTAINER & CONTENT CARD
+           MAIN CONTENT & TYPOGRAPHY
            ========================================================= */
         .container {
-            max-width: 700px;
+            max-width: 800px;
             margin: 30px auto 0;
             padding: 0 15px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 12px var(--shadow-color);
         }
 
-        h1 {
-            color: var(--weekly-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: var(--weekly-color);
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
@@ -179,6 +173,75 @@
 
         .back-link:hover {
             text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--subtext-color);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        a.inline-link {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        a.inline-link:hover {
+            opacity: 0.8;
+        }
+
+        /* TLDR Box */
+        .tldr-box {
+            background-color: var(--tldr-bg);
+            border-left: 4px solid var(--tldr-border);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .tldr-title {
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .tldr-list {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .tldr-list li {
+            margin-bottom: 6px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .tldr-list li:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -196,10 +259,7 @@
             </ul>
 
             <div class="nav-controls">
-                <!-- Google Translate Dropdown Widget -->
                 <div id="google_translate_element"></div>
-
-                <!-- Dark Mode Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">Dark</button>
             </div>
         </div>
@@ -209,20 +269,106 @@
     <div class="container">
         <div class="card">
             <a href="index.html" class="back-link">&larr; Return to Hub</a>
+
             <h1>Glen Pamment</h1>
-            <p>Welcome to Grade 2! I am excited to partner with you and your child this school year.</p>
-            <br>
-            <p>Use this space to share a short bio, your teaching philosophy, or classroom contact info and office
-                hours.</p>
+            <div class="subtitle">Grade 2 Educator | Educational Philosophy</div>
+
+            <!-- TLDR SUMMARY BOX -->
+            <div class="tldr-box">
+                <div class="tldr-title">TL;DR Summary</div>
+                <ul class="tldr-list">
+                    <li><strong>Pedagogical Approach:</strong> Social constructivist and inquiry-based educator with a
+                        foundation in Early Childhood Education and Psychology.</li>
+                    <li><strong>Classroom Role:</strong> Facilitator who reduces direct instruction to foster peer
+                        learning, student agency, and problem-solving.</li>
+                    <li><strong>Community & Well-being:</strong> Prioritizes emotional safety and strong relationships
+                        using the Circle Solutions Program.</li>
+                    <li><strong>Global Perspective & Assessment:</strong> Emphasizes international mindedness, key
+                        concepts, student action, explicit goals, and timely feedback.</li>
+                    <li><strong>Personal Background:</strong> Outdoor enthusiast (trekking, scuba, kayaking in Tainan)
+                        dedicated to sustainability and lifelong learning.</li>
+                </ul>
+            </div>
+
+            <!-- FULL PHILOSOPHY SECTIONS -->
+            <h2>Constructivist Foundations & Facilitation</h2>
+            <p>I am a strong believer in social constructivist learning. My specialty is in early childhood education,
+                which was the focus of my teaching degree and Master's degree. Since graduation, I have taught
+                extensively in the primary years and bring the mindset of an early years educator to my work.</p>
+
+            <p>My philosophy aligns with Piaget’s belief that every time we teach children something, we keep them from
+                inventing it themselves. I also think that students learn best from their peers. I see the role of the
+                teacher as reducing reliance on direct instruction and acting more as a facilitator in the learning
+                process and manager of the information students need to learn. There will be times students do need
+                direct instruction, but I will only take that path when all other avenues have been tried.</p>
+
+            <h2>Inquiry-Based Learning & Scaffolding</h2>
+            <p>I am a passionate believer in inquiry. As Kath Murdoch, one of the foremost advocates of the technique,
+                states, it takes a special kind of teacher to become an inquiry-based teacher—someone who is willing to
+                give agency to the students to let them power the learning process. As a teacher, you have to know when
+                is the right time to be in charge, and when is the right time to let go. It also takes a special skill
+                to know what type of scaffolding, or support, is needed at the right time to guide students through the
+                learning process. Often, it comes down to asking the right questions.</p>
+
+            <h2>Psychology, Safety, and Classroom Culture</h2>
+            <p>Having completed a degree in psychology before pursuing a teaching career, I bring that understanding
+                into my interactions with people. Because I believe that students learn best from their peers, learning
+                occurs best when students feel safe and secure. As a teacher, I take the time to run the <a
+                    href="https://www.circlesolutionsnetwork.com" target="_blank" rel="noopener noreferrer"
+                    class="inline-link">Circle Solutions Program</a>. The benefits of this approach mean that all
+                members of the learning community get to know each other at a deeper level, leading to a more
+                compassionate and caring learning environment.</p>
+
+            <h2>International Mindedness & Student Action</h2>
+            <p>As an educator, several learning practices are fundamental to learning in an increasingly connected
+                world. Being internationally minded is of great importance. Learning must be significant and meaningful
+                for learners if they are expected to be engaged. When we show students the connections their learning
+                has to the world, and their potential to solve problems of a global nature, they become more empowered
+                and motivated.</p>
+
+            <p>A focus on key concepts is another way we can help learners see the "bigger picture." Enabling students
+                to take action is one of the most rewarding aspects of learning once established properly. When you
+                create a framework where units are significant and meaningful, students take action of their own accord.
+                You can read an example of this approach in practice on my blog post regarding <a
+                    href="http://inquirypractice.blogspot.tw/2016/09/student-led-inquiry-and-visible-thinking.html"
+                    target="_blank" rel="noopener noreferrer" class="inline-link">student-led inquiry and visible
+                    thinking</a>.</p>
+
+            <h2>Assessment for Growth</h2>
+            <p>One of the most rewarding aspects of teaching in a learning environment that values the needs of learners
+                is following best practices as they apply to assessment. I follow a process where I first discover what
+                students already know about an area of inquiry, then identify which aspects the learners find most
+                interesting.</p>
+
+            <p>Together, we create learning engagements and activities that allow students to display their
+                understanding. These engagements align with their developmental stages and individual needs while
+                remaining open-ended enough so that students can achieve at their own level. Guiding this process is a
+                primary goal, ensuring learners understand the purpose of learning by making goals explicit and
+                providing clear examples. Formative assessments ensure continuous awareness of each learner's progress,
+                enhanced by constructive and timely feedback. Learners are empowered to control their own
+                learning—setting goals, monitoring progress, and reflecting on future steps to improve.</p>
+
+            <h2>Connection to Nature & Personal Interests</h2>
+            <p>I have always enjoyed being connected to nature. I enjoy the experience of leaving the "beaten track"
+                with a few friends and spending a couple of days trekking from one spot to another. Relying on a couple
+                of maps and your own skills gives you a sense of your humanity. Bringing only what you need and can
+                carry, and leaving nothing behind but your footprints, is a good example of sustainability. I also enjoy
+                the water; I hold an open-water scuba license and enjoy kayaking with friends in Tainan.</p>
+
+            <h2>Lifelong Learning</h2>
+            <p>I am a lifelong learner. The world is changing at an astronomical rate, and education must move quickly
+                just to remain relevant. I believe that a focus on skills is essential, as there is no way we can
+                predict all the specific information students will need when they leave formal education. There has
+                never been a more relevant time to be an educator.</p>
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR TRANSLATION AND DARK MODE TOGGLE -->
+    <!-- JAVASCRIPT FOR TRANSLATION AND DARK MODE -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'zh-TW',
+                includedLanguages: 'zh-TW,zh-CN,en,ja,ko',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -234,7 +380,6 @@
         const toggleBtn = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme');
 
-        // Restore saved dark/light theme preference across pages
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggleBtn.textContent = 'Light';
