@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Update - Grade 2</title>
+    <style>
+        /* =========================================================
+           COLOR PALETTE & VARIABLES
+           ========================================================= */
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+            --text-color: #2c3e50;
+            --subtext-color: #555555;
+            --border-color: #e2e8f0;
+
+            --primary-color: #0066cc;
+            --primary-hover: #004999;
+            
+            --button-bg: #f8fafc;
+            --shadow-color: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --nav-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --subtext-color: #b0b0b0;
+            --border-color: #333333;
+
+            --primary-color: #4da6ff;
+            --primary-hover: #80c1ff;
+
+            --button-bg: #2a2a2a;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 50px;
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        .nav-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background-color: var(--button-bg);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--button-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        #google_translate_element select {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* CONTENT AREA */
+        .container {
+            max-width: 800px;
+            margin: 30px auto 0;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .date-subtitle {
+            font-size: 0.95rem;
+            color: var(--subtext-color);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION BAR (Notice the ../../ in links to return home) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">Grade 2 Hub</a>
+
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../about.html" class="nav-link">About Me</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <div id="google_translate_element"></div>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">Dark</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="card">
+            <a href="../../index.html" class="back-link">&larr; Return to Hub</a>
+            
+            <h1>Week 1 Newsletter</h1>
+            <div class="date-subtitle">September 7 – September 11</div>
+
+            <h2>Classroom Highlights</h2>
+            <p>Welcome to our first official weekly update! This week, students spent time setting up classroom routines, building community expectations, and getting to know their peers.</p>
+
+            <h2>Language & Literacy</h2>
+            <p>We began our initial reading assessments and explored our classroom library. Students selected their first independent reading books for the term.</p>
+
+            <h2>Mathematics</h2>
+            <p>In math, we focused on foundational counting strategies and number patterns through interactive group activities.</p>
+
+            <h2>Reminders & Dates</h2>
+            <ul>
+                <li><strong>PE Days:</strong> Tuesdays and Thursdays (please wear sports shoes).</li>
+                <li><strong>Library Day:</strong> Wednesdays (remember to bring library bags).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'zh-TW,zh-CN,en,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleBtn.textContent = 'Light';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = 'Dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = 'Light';
+            }
+        });
+    </script>
+</body>
+
+</html>
