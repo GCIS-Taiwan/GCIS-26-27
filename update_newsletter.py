@@ -1,11 +1,13 @@
 import os
 import glob
+from pathlib import Path
 
-# Configuration
-SCHOOL_LOGO_HTML = '<img src="/assets/GCIS_Logo.svg" alt="School Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">'
+# Base asset filenames
+SCHOOL_LOGO_FILE = 'GCIS_logo.svg'
+UNBOXED_LOGO_FILE = 'unboxed_logo.svg'
 
-APP_FOOTER_HTML = '''    <footer class="site-footer">
-        <img src="/assets/unboxed_logo.svg" alt="Unboxed Logo">
+APP_FOOTER_HTML_TEMPLATE = '''    <footer class="site-footer">
+        <img src="{unboxed_path}" alt="Unboxed Logo">
         <span>Crafted for our classroom using Unboxed</span>
     </footer>'''
 
@@ -27,8 +29,16 @@ CSS_SNIPPET = '''
             margin-right: 6px;
         }'''
 
+def get_relative_prefix(filepath):
+    # Calculate relative path back to root depending on depth
+    path = Path(filepath)
+    depth = len(path.parts) - 1  # root files have depth 1 (filename) -> parts: ('index.html',)
+    if depth == 1:
+        return ""
+    else:
+        return "../" * (depth - 1)
+
 def update_html_files():
-    # Recursively find all .html files in the directory and subdirectories
     html_files = glob.glob('**/*.html', recursive=True)
     
     for filepath in html_files:
@@ -36,16 +46,24 @@ def update_html_files():
             content = f.read()
 
         modified = False
+        prefix = get_relative_prefix(filepath)
+        
+        school_logo_src = f'{prefix}assets/{SCHOOL_LOGO_FILE}'
+        unboxed_logo_src = f'{prefix}assets/{UNBOXED_LOGO_FILE}'
+        
+        school_logo_html = f'<img src="{school_logo_src}" alt="School Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">'
+        app_footer_html = APP_FOOTER_HTML_TEMPLATE.format(unboxed_path=unboxed_logo_src)
 
-        # 1. Inject school logo into nav-brand if not already present
-        if '<a href' in content and SCHOOL_LOGO_HTML not in content:
+        # 1. Clean up old/broken logo insertions if any exist from previous runs, then re-insert properly
+        # (Or handle safe insertion into nav-brand)
+        if '<a href' in content and 'alt="School Logo"' not in content:
             content = content.replace(
                 '<a href="../../index.html" class="nav-brand">',
-                f'<a href="../../index.html" class="nav-brand">{SCHOOL_LOGO_HTML}'
+                f'<a href="../../index.html" class="nav-brand">{school_logo_html}'
             )
             content = content.replace(
                 '<a href="index.html" class="nav-brand">',
-                f'<a href="index.html" class="nav-brand">{SCHOOL_LOGO_HTML}'
+                f'<a href="index.html" class="nav-brand">{school_logo_html}'
             )
             modified = True
 
@@ -56,7 +74,7 @@ def update_html_files():
 
         # 3. Inject site-footer before </body> if not already present
         if '</body>' in content and 'class="site-footer"' not in content:
-            content = content.replace('</body>', f'{APP_FOOTER_HTML}\n</body>')
+            content = content.replace('</body>', f'{app_footer_html}\n</body>')
             modified = True
 
         if modified:
