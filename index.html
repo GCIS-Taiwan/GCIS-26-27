@@ -283,6 +283,23 @@
             text-align: center;
             margin-top: 12px;
         }
+    
+        .site-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px 20px;
+            font-size: 0.85rem;
+            color: var(--subtext-color);
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .site-footer img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
     </style>
 </head>
 
@@ -291,7 +308,7 @@
     <!-- TOP NAVIGATION BAR -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Grade 2 Hub</a>
+            <a href="index.html" class="nav-brand"><img src="/assets/GCIS_Logo.svg" alt="School Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">Grade 2 Hub</a>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -384,6 +401,10 @@
             }
         });
     </script>
+    <footer class="site-footer">
+        <img src="/assets/unboxed_logo.svg" alt="Unboxed Logo">
+        <span>Crafted for our classroom using Unboxed</span>
+    </footer>
 </body>
 
 </html>
