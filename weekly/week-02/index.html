@@ -6,215 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 2 Update - Grade 2</title>
     <link rel="icon" type="image/svg+xml" href="../../assets/GCIS_logo.svg">
-    <style>
-        /* =========================================================
-           COLOR PALETTE & VARIABLES
-           ========================================================= */
-        :root {
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-            --nav-bg: #ffffff;
-            --text-color: #2c3e50;
-            --subtext-color: #555555;
-            --border-color: #e2e8f0;
-
-            --primary-color: #0066cc;
-            --primary-hover: #004999;
-            
-            --button-bg: #f8fafc;
-            --shadow-color: rgba(0, 0, 0, 0.06);
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --nav-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --subtext-color: #b0b0b0;
-            --border-color: #333333;
-
-            --primary-color: #4da6ff;
-            --primary-hover: #80c1ff;
-
-            --button-bg: #2a2a2a;
-            --shadow-color: rgba(0, 0, 0, 0.4);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding-bottom: 50px;
-        }
-
-        /* NAVIGATION BAR */
-        .navbar {
-            background-color: var(--nav-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px var(--shadow-color);
-        }
-
-        .nav-container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .nav-brand {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            list-style: none;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 6px 10px;
-            border-radius: 6px;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-            background-color: var(--button-bg);
-        }
-
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .theme-toggle-btn {
-            background: var(--button-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .theme-toggle-btn:hover {
-            border-color: var(--primary-color);
-        }
-
-        #google_translate_element select {
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            padding: 6px 8px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
-        /* CONTENT AREA */
-        .container {
-            max-width: 800px;
-            margin: 30px auto 0;
-            padding: 0 15px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px var(--shadow-color);
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-
-        .date-subtitle {
-            font-size: 0.95rem;
-            color: var(--subtext-color);
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.25rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        p {
-            margin-bottom: 16px;
-        }
-
-        ul {
-            margin-bottom: 16px;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 6px;
-        }
-    
-        .site-footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 25px 20px;
-            font-size: 0.85rem;
-            color: var(--subtext-color);
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .site-footer img {
-            height: 24px;
-            vertical-align: middle;
-            margin-right: 6px;
-        }
-    </style>
+    <!-- LINK TO CENTRAL STYLESHEET -->
+    <link rel="stylesheet" href="../../assets/style.css">
 </head>
 
 <body>
@@ -247,25 +40,25 @@
             <h2>Mathematics Inquiry</h2>
             <p>This is what we did last week, we engaged in an active math inquiry exploring place value. Students worked with hands-on materials to break down two-digit numbers, deepening their conceptual understanding of tens, and units.</p>
             <p>Building on these foundational counting patterns, we took our first steps into multiplication. We explored patterns foundational to multiplication concepts.</p>
-            <img src="assets/images/Maths 100 investigation.jpg" alt="Maths 100 investigation.jpg" class="newsletter-img">
-            <img src="assets/images/Maths skip counting by 3 1.jpg" alt="Maths skip counting by 3 1.jpg" class="newsletter-img">
+            <img src="assets/images/Maths 100 investigation.jpg" alt="Maths 100 investigation.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Maths skip counting by 3 1.jpg" alt="Maths skip counting by 3 1.jpg" class="newsletter-img" title="Tap to expand">
 
             <h2>Language & Literacy</h2>
             <p>We kicked off our peer Buddy Reading program with Grade 1! Our Grade 2 students stepped into leadership roles, practicing expressive reading and guiding their younger buddies through shared stories.</p>
-            <img src="assets/images/Buddy Reading 11_9 1.jpg" alt="Buddy Reading 11_9 1.jpg" class="newsletter-img">
-            <img src="assets/images/Buddy Reading 11_9 2.jpg" alt="Buddy Reading 11_9 2.jpg" class="newsletter-img">
-            <img src="assets/images/Buddy Reading 11_9 4.jpg" alt="Buddy Reading 11_9 4.jpg" class="newsletter-img">
-            <img src="assets/images/Buddy Reading 11_9 6.jpg" alt="Buddy Reading 11_9 6.jpg" class="newsletter-img">
-            <img src="assets/images/Buddy Reading 11_9 5.jpg" alt="Buddy Reading 11_9 5.jpg" class="newsletter-img">
-            <img src="assets/images/Buddy Reading 11_9 7.jpg" alt="Buddy Reading 11_9 7.jpg" class="newsletter-img">
+            <img src="assets/images/Buddy Reading 11_9 1.jpg" alt="Buddy Reading 11_9 1.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Buddy Reading 11_9 2.jpg" alt="Buddy Reading 11_9 2.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Buddy Reading 11_9 4.jpg" alt="Buddy Reading 11_9 4.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Buddy Reading 11_9 6.jpg" alt="Buddy Reading 11_9 6.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Buddy Reading 11_9 5.jpg" alt="Buddy Reading 11_9 5.jpg" class="newsletter-img" title="Tap to expand">
+            <img src="assets/images/Buddy Reading 11_9 7.jpg" alt="Buddy Reading 11_9 7.jpg" class="newsletter-img" title="Tap to expand">
             <p>We are also reviewing of the phonics sounds we learned last year. We are expanding our knowledge of phonics by
                 identifying the gramaphones that make the sounds. To help reinforce these rules and build student ownership, we
                 created posters that are now displayed in the classroom as ongoing learning anchors.</p>
-            <img src="assets/images/Phonics Charts 2.jpg" alt="Phonics Charts 2.jpg" class="newsletter-img">
+            <img src="assets/images/Phonics Charts 2.jpg" alt="Phonics Charts 2.jpg" class="newsletter-img" title="Tap to expand">
 
             <h2>Science & Inquiry</h2>
             <p>In science, we began identifying what we already know about living things. Students completed an interactive animal sorting activity, grouping organisms by various self-selected characteristics and traits. This pre-assessment helps us gauge existing knowledge as we move deeper into our unit on living things and environments.</p>
-            <img src="assets/images/Science Sort.jpg" alt="Science Sort.jpg" class="newsletter-img">
+            <img src="assets/images/Science Sort.jpg" alt="Science Sort.jpg" class="newsletter-img" title="Tap to expand">
 
             <h2>Reminders</h2>
             <ul>
@@ -287,6 +80,9 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- LINK TO CENTRAL JAVASCRIPT -->
+    <script src="../../assets/main.js"></script>
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
