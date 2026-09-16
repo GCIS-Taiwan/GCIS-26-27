@@ -181,28 +181,6 @@
     <!-- LINK TO CENTRAL JAVASCRIPT -->
     <script src="../../assets/main.js"></script>
     
-    <script>
-        const toggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.textContent = 'Light';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                toggleBtn.textContent = 'Dark';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.textContent = 'Light';
-            }
-        });
-    </script>
         <footer class="site-footer">
         <img src="../../assets/unboxed_logo.svg" alt="Unboxed Logo">
         <span>Crafted for our classroom using Unboxed</span>
